@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="/">Назад к списку</a>
+    <br>
+    <p><font size="6">{{ image.name }}</font></p>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+       {{ form.as_p }}
+      <button type="submit">Отправить</button>
+    </form>
+    <br>
+    <img src="{{ image.custom_image.url }}" alt="">
+{% endblock content %}

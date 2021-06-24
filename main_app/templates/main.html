@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p><font size="6">Список изображений</font></p>
+    {% if image_list %}
+        {% for image in image_list %}
+            <a href="{{ image.get_absolute_url }}">{{ image.name }}</a>
+            <br>
+        {% endfor %}
+    {% else %}
+        <p>Нет доступных изображений</p>
+    {% endif %}
+    <br>
+    <a href="upload/">Добавить изображение</a>
+{% endblock content %}

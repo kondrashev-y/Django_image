@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="/">Назад к списку</a>
+    <form method="post" enctype="multipart/form-data">
+        <p><font size="6">Новое изображение</font></p>
+      {% csrf_token %}
+       {{ form.as_p }}
+      <button type="submit">Отправить</button>
+    </form>
+
+    {% if img_obj %}
+      <h3>Успешно загружено</h3>
+    {% endif %}
+{% endblock content %}
